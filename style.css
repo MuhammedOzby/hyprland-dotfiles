@@ -1,0 +1,116 @@
+* {
+  font-family: "GohuFont 11 Nerd Font";
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: rgb(189, 187, 215);
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+
+#window {
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 1px solid rgb(150, 123, 182);
+  border-radius: 5px;
+  margin: 5px;
+}
+
+/* WORKSPACE START */
+
+#workspaces {
+  border: 1px solid rgb(150, 123, 182);
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#workspaces * {
+  color: rgb(189, 187, 215);
+}
+
+#workspaces button {
+  padding: 0 12px 0 12px;
+  background-color: transparent;
+}
+
+#workspaces button:hover {
+  background: inherit;
+  box-shadow: inset 0 -2px rgb(150, 123, 182);
+}
+
+#workspaces button.empty {
+  background: rgba(0, 0, 0, 0.2);
+  color: rgb(103, 102, 117);
+}
+
+#workspaces button.visible {
+}
+
+#workspaces button.urgent {
+}
+
+#workspaces button.active {
+  background-color: #796878;
+}
+
+#workspaces button.special {
+}
+
+/* WORKSPACE END */
+
+/* OTHERS */
+
+#language {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid rgb(150, 123, 182);
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#keyboard-state {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid rgb(150, 123, 182);
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#keyboard-state label {
+  margin: 5px;
+}
+
+#keyboard-state label.locked {
+  color: #fba0e3;
+}
