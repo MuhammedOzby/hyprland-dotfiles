@@ -15,7 +15,8 @@
     "hyprland/window": {
         "format": "Aktif Pencere: {}",
         "rewrite": {
-            "(.*)Zen Browser": "🌎 $1"
+            "(.*)Zen Browser": "İnternet Tarayıcı: $1",
+            "(.*)Code(.*)": "Metin Editörü $1"
         },
         "separate-outputs": true
     },
