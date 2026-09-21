@@ -10,18 +10,12 @@ require("conf/customization")
 -- Refer to the wiki for more information.
 -- https://wiki.hypr.land/Configuring/Start/
 
--- Please note not all available settings / options are set here.
--- For a full list, see the wiki
-
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
-
+-- Kehribar Gece: notification accent uses the primary amber.
 hl.notification.create({
   text = "Merhaba, bu bir test bildirimidir!",
-  duration = 5000,       -- ms cinsinden
-  color = "0xff89b4fa",  -- isteğe bağlı (ARGB hex)
-  font_size = 14,        -- isteğe bağlı
+  duration = 5000,
+  color = "0xfff5a623",
+  font_size = 14,
 })
 
 -----------------------
@@ -48,7 +42,7 @@ hl.notification.create({
 
 hl.config({
 	misc = {
-		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
-		disable_hyprland_logo = false, -- If true disables the random hyprland logo / anime girl background. :(
+		force_default_wallpaper = -1,
+		disable_hyprland_logo = false,
 	},
 })
