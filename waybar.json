@@ -1,10 +1,17 @@
 {
+    "output": "DP-1",
     "layer": "top",
     "position": "top",
     "height": 36,
-    "modules-left": ["hyprland/workspaces", "hyprland/language"],
-    "modules-center": ["hyprland/window"],
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/language"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-right": [
+        "custom/tailscale",
         "pulseaudio",
         "network",
         "cpu",
@@ -15,7 +22,6 @@
     "hyprland/window": {
         "format": "Aktif Pencere: {}",
         "rewrite": {
-            "(.*)Zen Browser": "İnternet Tarayıcı: $1",
             "(.*)Code(.*)": "Metin Editörü $1"
         },
         "separate-outputs": true
@@ -27,6 +33,7 @@
         "keyboard-name": "at-translated-set-2-keyboard"
     },
     "hyprland/workspaces": {
+        "sort-by": "id",
         "format": "{name}: {icon}",
         "format-icons": {
             "1": "",
@@ -36,9 +43,6 @@
             "5": "",
             "active": "",
             "default": ""
-        },
-        "persistent-workspaces": {
-            "*": 5
         }
     },
     "tray": {
@@ -60,6 +64,12 @@
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "Disconnected ⚠"
     },
+    "custom/tailscale": {
+        "format": "{}",
+        "exec": " tailscale ip --4",
+        "interval": 5, 
+        "on-click": "notify-send 'Tıklandı!'" 
+    },
     "pulseaudio": {
         "scroll-step": 1,
         "format": "{volume}% {icon}",
@@ -67,7 +77,10 @@
         "format-muted": "",
         "format-icons": {
             "headphones": "",
-            "default": ["", ""]
+            "default": [
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     }
