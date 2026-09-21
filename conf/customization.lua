@@ -18,7 +18,7 @@ hl.config({
 		border_size = 2,
 
 		col = {
-			active_border = "rgba(F5A623ee)",
+			active_border = { colors = { "rgba(F5A623ee)", "rgba(A78BFAee)" }, angle = 45 },
 			inactive_border = "rgba(344158cc)",
 		},
 
@@ -55,7 +55,7 @@ hl.config({
 	},
 })
 
--- Motion stays short and quiet. No continuously rotating border.
+-- Motion stays short and quiet. Active border sweeps once on focus, then stops.
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
 hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
@@ -66,7 +66,7 @@ hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 1
 
 hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
 hl.animation({ leaf = "border", enabled = true, speed = 2.4, bezier = "easeOutQuint" })
-hl.animation({ leaf = "borderangle", enabled = false, speed = 15.39, bezier = "quick" })
+hl.animation({ leaf = "borderangle", enabled = true, speed = 3.2, bezier = "easeOutQuint", style = "once" })
 hl.animation({ leaf = "windows", enabled = true, speed = 4.79, spring = "easy" })
 hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "popin 94%" })
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 94%" })
